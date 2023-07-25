@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts/calculator.js"></script>
+    <title>Online Calculator</title>
+
+</head>
+
+<body>
+    <h1>Online Calculator</h1>
+    <p>This is an online Calculator</p>
+    <br />
+
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="first-number">
+                        First number:
+                    </label>
+                </td>
+                <td>
+                    <input id="first-number" type="number" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="second-number">
+                        Second number:
+                    </label>
+                </td>
+                <td>
+                    <input id="second-number" type="number" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Result:
+                </td>
+                <td id="result">
+                    No result yet
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="calculate()">
+        Calculate
+    </button>
+</body>
+
+<script lang="JavaScript">
+
+    function calculate() {
+
+        const firstNumberElement = document.getElementById("first-number");
+        const secondNumberElement = document.getElementById("second-number");
+
+        let firstNumber = parseInt(firstNumberElement.value);
+        let secondNumber = parseInt(secondNumberElement.value);
+
+        const calc = new Calculator();
+        const result = calc.add(firstNumber, secondNumber);
+
+        const resultElement = document.getElementById("result");
+        resultElement.textContent = result;
+    }
+
+</script>
+
+</html>
